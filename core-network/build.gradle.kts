@@ -1,6 +1,10 @@
 plugins {
     id("durian-android-library")
     id("durian-hilt")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+}
+secrets {
+    defaultPropertiesFileName = "release.properties"
 }
 
 android {
@@ -16,9 +20,15 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
+    implementation(libs.android.core.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.okhttp3.loggin.interceptor)
+    implementation(libs.coroutines.android)
+
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
