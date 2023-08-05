@@ -1,0 +1,93 @@
+[versions]
+androidGradlePlugin = "8.0.2"
+androidLibraryPlugin = "8.0.2"
+kotlinAndroid = "1.8.0"
+kotlinKsp = "1.8.0-1.0.8"
+hilt = "2.44"
+hiltWork = "1.0.0"
+hiltCompiler = "1.0.0"
+hiltNavigationCompose = "1.0.0"
+retrofit = "2.9.0"
+moshi = "1.13.0"
+okhttp = "4.9.3"
+room = "2.4.2"
+androidCoreKtx = "1.10.1"
+androidPreferenceKtx = "1.2.0"
+androidMultidex = "2.0.1"
+androidxComposeBom = "2022.10.00"
+activityCompose = "1.7.2"
+androidNavigationCompose = "2.5.3"
+androidConstraintLayoutCompose = "1.0.1"
+coilCompose = "2.1.0"
+googleAccompanist = "0.30.1"
+coroutines = "1.6.4"
+androidxComposeCompiler = "1.4.1"
+secrets = "2.0.1"
+[libraries]
+android-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidCoreKtx" }
+android-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidPreferenceKtx" }
+android-multidex = { module = "androidx.multidex:multidex", version.ref = "androidMultidex" }
+
+
+android-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "androidxComposeBom" }
+android-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+android-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+android-compose-ui = { module = "androidx.compose.ui:ui" }
+android-compose-material = { module = "androidx.compose.material3:material3" }
+android-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidConstraintLayoutCompose" }
+android-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidNavigationCompose" }
+android-navigation-compose-ktx = { module = "androidx.navigation:navigation-common-ktx", version.ref = "androidNavigationCompose" }
+android-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+android-compose-ui-utils = { module = "androidx.compose.ui:ui-util" }
+android-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+
+
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltWork" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
+
+
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+okhttp3-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp3-loggin-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+#{ room
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+# Kotlin Extensions and Coroutines support for Room
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+#}
+
+
+accompanist-system-uicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "googleAccompanist" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "googleAccompanist" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinAndroid" }
+
+[bundles]
+androidComposeLibs = ["android-compose-ui-tooling", "android-compose-ui-tooling-preview", "android-compose-ui",
+    "android-compose-material", "android-constraintlayout-compose", "android-navigation-compose", "android-navigation-compose-ktx", "coil-compose",
+    "android-compose-ui-utils", "android-compose-ui-graphics"
+]
+networkComposeLibs = ["retrofit", "retrofit-converter-moshi", "moshi-kotlin",
+    "moshi-core", "okhttp3-okhttp", "okhttp3-loggin-interceptor"
+]
+googleAccompanistLibs = ["accompanist-system-uicontroller", "accompanist-permissions"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidLibraryPlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlinKsp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
