@@ -1,5 +1,6 @@
 plugins {
     id("durian-android-library")
+    id("durian-hilt")
 }
 
 android {
@@ -13,10 +14,12 @@ android {
 }
 
 dependencies {
+    implementation(libs.android.core.ktx)
+    implementation(libs.coroutines.android)
+    implementation(project(":core-network"))
+    implementation(project(":core-model"))
+    implementation(project(":core-common"))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
