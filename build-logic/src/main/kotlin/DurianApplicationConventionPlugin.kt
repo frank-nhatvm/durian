@@ -1,4 +1,5 @@
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
+import com.nhatvm.durian.DurianAppConfig
 import com.nhatvm.durian.configureBuildType
 import com.nhatvm.durian.configureKotlinAndroid
 import org.gradle.api.Plugin
@@ -16,6 +17,11 @@ class DurianApplicationConventionPlugin : Plugin<Project> {
             extensions.configure<BaseAppModuleExtension> {
                 configureKotlinAndroid(this)
                 configureBuildType(this)
+
+                defaultConfig {
+                    targetSdk = DurianAppConfig.targetSdk
+                }
+
                 buildFeatures {
                     buildConfig = true
                 }

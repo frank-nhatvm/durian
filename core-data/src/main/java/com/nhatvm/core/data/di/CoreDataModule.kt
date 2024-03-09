@@ -1,7 +1,9 @@
 package com.nhatvm.core.data.di
 
 import com.nhatvm.core.data.repositories.ConfigRepository
+import com.nhatvm.core.data.repositories.ConfigRepositoryImpl
 import com.nhatvm.core.network.datasources.ConfigRemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface CoreDataModule {
 
-    @Provides
-    fun provideConfigRepository(configRemoteDataSourceImpl: ConfigRemoteDataSourceImpl): ConfigRepository
+    @Binds
+    fun bindConfigRepository(configRepositoryImpl: ConfigRepositoryImpl): ConfigRepository
 
 }

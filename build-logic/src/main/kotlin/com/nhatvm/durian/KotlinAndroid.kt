@@ -3,7 +3,9 @@ package com.nhatvm.durian
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 internal fun Project.configureKotlinAndroid(commonExtension: CommonExtension<*, *, *, *>) {
     commonExtension.apply {
@@ -21,4 +23,9 @@ internal fun Project.configureKotlinAndroid(commonExtension: CommonExtension<*, 
             }
         }
     }
+}
+
+
+fun CommonExtension<*, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
+    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
 }

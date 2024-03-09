@@ -1,5 +1,6 @@
 plugins {
-    id("durian-android-library")
+    id("durian-library")
+    id("durian-compose-library")
 }
 
 android {
@@ -8,7 +9,5 @@ android {
 }
 
 dependencies {
-    val androidComposeBom = platform(libs.android.compose.bom)
-    implementation(androidComposeBom)
-    implementation(libs.bundles.androidComposeLibs)
+    api(libs.bundles.androidComposeLibs)
 }

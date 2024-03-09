@@ -1,6 +1,7 @@
 [versions]
 androidGradlePlugin = "8.0.2"
 androidLibraryPlugin = "8.0.2"
+jnav = "1.0.2"
 kotlinAndroid = "1.8.0"
 kotlinKsp = "1.8.0-1.0.8"
 hilt = "2.44"
@@ -50,6 +51,7 @@ hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", ve
 hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 
 
+fatherofapps-jnav = { module = "com.fatherofapps:jnav", version.ref = "jnav" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }

@@ -1,5 +1,5 @@
 plugins {
-    id("durian-android-library")
+    id("durian-library")
     id("durian-hilt")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }

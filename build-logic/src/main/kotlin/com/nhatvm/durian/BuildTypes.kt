@@ -5,9 +5,6 @@ import org.gradle.api.Project
 
 internal fun Project.configureBuildType(commonExtension: CommonExtension<*, *, *, *>) {
     commonExtension.apply {
-        signingConfigs {
-
-        }
         buildTypes {
 
             getByName("debug") {

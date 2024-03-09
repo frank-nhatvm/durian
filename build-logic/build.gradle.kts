@@ -13,16 +13,28 @@ dependencies {
 gradlePlugin {
     plugins {
         register("durianApplicationConventionPlugin") {
-            id = "durian-android-application"
+            id = "durian-application"
             implementationClass = "DurianApplicationConventionPlugin"
         }
         register("durianLibraryConventionPlugin") {
-            id = "durian-android-library"
+            id = "durian-library"
             implementationClass = "DurianLibraryConventionPlugin"
         }
         register("durianHiltConventionPlugin") {
             id = "durian-hilt"
             implementationClass = "DurianHiltConventionPlugin"
+        }
+        register("durianApplicationComposeConventionPlugin") {
+            id = "durian-compose-application"
+            implementationClass = "DurianApplicationComposeConventionPlugin"
+        }
+        register("durianLibraryComposeConventionPlugin") {
+            id = "durian-compose-library"
+            implementationClass = "DurianLibraryComposeConventionPlugin"
+        }
+        register("DurianFeatureConventionPlugin") {
+            id = "durian-feature"
+            implementationClass = "DurianFeatureConventionPlugin"
         }
     }
 }
