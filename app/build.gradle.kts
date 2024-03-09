@@ -34,6 +34,8 @@ android {
 
 dependencies {
 
+    implementation(project(":core-designSystem"))
+
     implementation(libs.android.core.ktx)
 
 
