@@ -8,6 +8,7 @@ class DurianFeatureConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply {
                 apply("durian-library")
+                apply("durian-hilt")
                 apply("durian-compose-library")
             }
 

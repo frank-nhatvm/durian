@@ -27,6 +27,7 @@ android {
 dependencies {
 
     implementation(project(":core-designSystem"))
+    implementation(project(":feature-splash"))
 
     implementation(libs.android.core.ktx)
 
@@ -39,5 +40,6 @@ dependencies {
 
 
     implementation(libs.hilt.navigation.compose)
+    implementation(project(":core-data"))
 
 }

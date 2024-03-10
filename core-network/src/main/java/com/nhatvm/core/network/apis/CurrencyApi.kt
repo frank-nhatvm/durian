@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface CurrencyApi {
 
-    @GET("/V1/directory/currency")
+    @GET("rest/all/V1/directory/currency")
     suspend fun getCurrency(): Response<CurrencyRemote>
 
 

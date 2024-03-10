@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface StoreConfigsApi {
-    @GET("/V1/store/storeConfigs")
+    @GET("rest/all/V1/store/storeConfigs")
     suspend fun getStoreConfig(): Response<List<StoreConfigRemote>>
 }

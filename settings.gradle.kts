@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Durian"
+rootProject.name = "durian"
 include(":app")
 include(":core-network")
 include(":core-localstorage")
@@ -23,3 +23,4 @@ include(":core-model")
 include(":core-common")
 include(":core-designSystem")
 include(":core-navigation")
+include(":feature-splash")

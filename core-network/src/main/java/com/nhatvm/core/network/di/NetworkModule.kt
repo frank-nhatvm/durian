@@ -32,11 +32,13 @@ interface NetworkModuleProvide {
 object NetworkModule {
 
     @Singleton
+    @Provides
     fun provideCurrencyApi(retrofit: Retrofit): CurrencyApi {
         return retrofit.create(CurrencyApi::class.java)
     }
 
     @Singleton
+    @Provides
     fun provideStoreConfigsApi(retrofit: Retrofit): StoreConfigsApi {
         return retrofit.create(StoreConfigsApi::class.java)
     }

@@ -7,10 +7,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.fatherofapps.jnav.annotations.JNav
+import com.nhatvm.core.data.repositories.ConfigRepository
 import com.nhatvm.core.designsystem.theme.DurianTheme
+import com.nhatvm.splash.SplashNavigation
+import com.nhatvm.splash.navigation.splashScreen
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 
 @Composable
@@ -18,7 +25,11 @@ fun DurianApp(
     appState: AppState = rememberAppState()
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
-        NavHost(navController = appState.navController, startDestination = TestNavigation.route) {
+        NavHost(navController = appState.navController, startDestination = SplashNavigation.route) {
+
+            splashScreen {
+                appState.navigate(TestNavigation, TestNavigation.createRoute())
+            }
             composable(route = TestNavigation.route) {
                 TestScreen()
             }
@@ -32,7 +43,9 @@ fun DurianApp(
     destination = "test_destination"
 )
 @Composable
-fun TestScreen() {
+fun TestScreen(
+    viewModel: TestViewModel = hiltViewModel()
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -40,8 +53,15 @@ fun TestScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            "durian",
+            "Home",
             style = DurianTheme.typography.labelLarge.copy(color = DurianTheme.colors.primary)
         )
     }
+}
+
+@HiltViewModel
+class TestViewModel @Inject constructor(
+    val configRepository: ConfigRepository,
+) : ViewModel(){
+
 }
